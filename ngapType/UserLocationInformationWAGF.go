@@ -10,8 +10,8 @@ const (
 )
 
 type UserLocationInformationWAGF struct {
-	Present          int           /* Choice Type */
-	GlobalLineID     *GlobalLineID `aper:"valueExt"`
-	HFCNodeID        *HFCNodeID
-	ChoiceExtensions *ProtocolIESingleContainerUserLocationInformationWAGFExtIEs
+	TWAPID       TWAPID
+	IPAddress    TransportLayerAddress
+	PortNumber   *PortNumber                                                  `aper:"optional"`
+	IEExtensions *ProtocolExtensionContainerUserLocationInformationTWIFExtIEs `aper:"optional"`
 }
